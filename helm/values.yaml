@@ -1,0 +1,9 @@
+replicaCount: 1
+
+image:
+  repository: docker.io/<your-dockerhub-username>/app-demo
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 5000
