@@ -1,6 +1,5 @@
 apiVersion: apps/v1
 kind: Deployment
-
 metadata:
   name: app-demo
 
@@ -17,8 +16,11 @@ spec:
         app: app-demo
 
     spec:
+      imagePullSecrets:
+        - name: quay-registry-secret
+
       containers:
-      - name: app-demo
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        ports:
-        - containerPort: 5000
+        - name: app-demo
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: 5000

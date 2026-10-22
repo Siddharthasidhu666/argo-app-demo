@@ -1,0 +1,9 @@
+replicaCount: 1
+
+image:
+  repository: docker.io/sidsiddhu789/app-demo
+  tag: v1
+
+service:
+  type: ClusterIP
+  port: 5000
