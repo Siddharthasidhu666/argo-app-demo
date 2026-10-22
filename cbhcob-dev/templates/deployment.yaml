@@ -24,3 +24,6 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
             - containerPort: 5000
+          envFrom:
+            - configMapRef:
+                name: app-demo-config
