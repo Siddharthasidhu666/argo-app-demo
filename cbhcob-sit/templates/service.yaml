@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: app-demo
+
+spec:
+  selector:
+    app: app-demo
+
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 5000
+
+  type: {{ .Values.service.type }}
